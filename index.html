@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <title>Password Generator w/ Copilot</title>
+</head>
+
+<body>
+
+    <div id="psw-gen-section">
+        <div class="psw-gen-container">
+            <h2 class="psw-gen-title">Password generator</h2>
+            <div class="psw-gen-output-and-copy">
+                <input type="text" id="psw-gen-output" value="" readonly>
+                <a href="" class="psw-gen-output-copy-btn animate__animated">
+                    <i class="fa-regular fa-copy"></i>
+                </a>
+                <span id="tooltip" class="tooltip">Password copied</span>
+            </div>
+            <div class="psw-gen-body">
+                <div class="psw-gen-options">
+                    <div class="psw-gen-option">
+                        <div class="character-length-wrapper">
+                            <h4 class="psw-strength-title">Character length</h4>
+                            <input type="text" id="psw-gen-length-num">
+                        </div>
+                        <input type="range" id="psw-gen-length" min="4" max="20" value="2" class="custom-range">
+                    </div>
+                    <div class="psw-gen-option">
+                        <div class="psw-gen-option">
+                            <label for="psw-gen-uppercase" class="custom-checkbox">
+                                Include Uppercase Letters
+                                <input type="checkbox" id="psw-gen-uppercase" class="psw-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="psw-gen-option">
+                            <label for="psw-gen-lowercase" class="custom-checkbox">
+                                Include Lowercase Letters
+                                <input type="checkbox" id="psw-gen-lowercase" class="psw-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="psw-gen-option">
+                            <label for="psw-gen-numbers" class="custom-checkbox">
+                                Include Numbers
+                                <input type="checkbox" id="psw-gen-numbers" class="psw-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="psw-gen-option">
+                            <label for="psw-gen-symbols" class="custom-checkbox">
+                                Include Symbols
+                                <input type="checkbox" id="psw-gen-symbols" class="psw-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="psw-strength-container">
+                        <h4 class="psw-strength-title">Strength</h4>
+                        <div class="psw-strength-bar-container">
+                            <div class="psw-strength-bar"></div>
+                            <div class="psw-strength-bar"></div>
+                            <div class="psw-strength-bar"></div>
+                            <div class="psw-strength-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="psw-gen-btn">Generate <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

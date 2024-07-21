@@ -1,0 +1,288 @@
+/*
+=====
+typography styling
+=====
+*/
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-family: "Space Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.custom-checkbox {
+  font-size: 0.875em;
+}
+
+@media screen and (max-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  .custom-checkbox {
+    font-size: 85%;
+  }
+}
+
+/*
+=====
+layout styling
+=====
+*/
+
+body {
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+#psw-gen-section {
+  max-width: 400px;
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.psw-gen-container {
+  margin: 0 auto;
+}
+
+.psw-gen-output-and-copy {
+  position: relative;
+  background: wheat;
+  padding: 1em 1.4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  font-size: 1.2em;
+}
+
+#psw-gen-output {
+  outline: none;
+}
+
+.psw-gen-output-copy-btn {
+  color: black;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 140px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: -20px;
+  right: 0;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.6em;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 30px;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.psw-gen-body {
+  background: #fef0ff;
+  padding: 1em 1.4em;
+}
+
+.psw-gen-option:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="text"]:focus-visible {
+  border: none;
+  background: transparent;
+}
+
+#psw-gen-length-num {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: wheat;
+  font-size: 1.6em;
+}
+
+.character-length-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*
+=====
+checkbox and range styling
+=====
+*/
+
+/* range */
+
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 1.2em;
+  margin-bottom: 2em;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8d94f8;
+  cursor: grab;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8d94f8;
+  cursor: grab;
+}
+
+/* checkbox */
+
+.custom-checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: max-content;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+.custom-checkbox .checkmark {
+  display: block;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+  margin-right: 0.6em;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #b3b3b3;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #8d94f8;
+}
+
+.custom-checkbox .checkmark:after {
+  content: "";
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+  left: 6px;
+  bottom: 4px;
+}
+
+.custom-checkbox .checkmark:after {
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*
+=====
+password strength styling
+=====
+*/
+
+.psw-strength-container,
+.psw-strength-bar-container {
+  display: flex;
+  align-items: center;
+}
+
+.psw-strength-container {
+  justify-content: space-between;
+  color: white;
+  background: black;
+  padding: 1em 1.4em;
+  margin: 1.4em 0 1.4em 0;
+}
+
+.psw-strength-bar-container {
+  gap: 0.5em;
+}
+
+.psw-strength-bar {
+  width: 4px;
+  height: 24px;
+  border: 2px solid white;
+}
+
+/* button styling */
+
+#psw-gen-btn {
+  cursor: pointer;
+  background: #8d94f8;
+  border: none;
+  padding: 1em 1.4em;
+  color: white;
+  transition: opacity 0.2s ease;
+  font-size: 1em;
+  width: 100%;
+}
+
+#psw-gen-btn:hover {
+  opacity: 0.8;
+}
